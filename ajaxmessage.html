@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="fi">
-
+    
 <head>
     <style>
         .body {
@@ -46,6 +46,16 @@
             text-align: center;
         }
 
+        .section form {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border: 2px;
+            
+            border-style: solid;
+            border-color: grey;
+            background-color: ghostwhite;
+        }
+
         .footer {
             position: fixed;
             left: 0;
@@ -56,7 +66,7 @@
             text-align: center;
         }
     </style>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -72,7 +82,7 @@
         <img src="VanhaKuvaHKI.jpg" alt="VanhaKuvaHelsingistä" class="center">
     </div>
 
-    
+    <div class="header">
         <p></p>
     </div>
     <!--NAVIGOINTI-->
@@ -83,18 +93,43 @@
         <a href="ajaxmessage">Ajaxmessage</a>
 
     </div>
+
     <!--SECTION-->
+    <!--SCRIPT FOR NOT ACCEPTING EMPTY FIELD IN FORM-->
+    <script>
+        function validateForm() {
+          var x = document.forms["form1"]["username"].value;
+          if (x == "" || x == null) {
+            alert("Name must be filled out");
+            return false;
+          }
+        }
+        </script>
+
+
+
     <div class="section">
-        <h2>On this page you can see a table with names, countries and messages </h2>
-        <p></p>
+        <h2>Here you should be able to leave ajax message</h2><br>
 
-        
+        <form name="form1" method="post" action="newmessage" onsubmit="return validateForm()">
+            
+            <label for="fname">Name:</label><br>
+            <input type="text" name="ajax-username" value="" placeholder="'Matti Meikäläinen'"><br>
+            <label for="country">Country:</label><br>
+            <input type="text" name="ajax-country" value="" placeholder="'Mikä Mikä Maa'"><br>
+            
+            <p>Message:</p>
+            
+            
+            <textarea rows="4" cols="30" name="ajax-message" placeholder="'Add your message here'"></textarea>
+            <br><br>
 
+            <input type="submit" value="Submit">
+        </form>
 
         <br>
         <img src="VanhaKuvaHKI_2.jpg" alt="VanhaKuvaHelsingistä_2" class="center">
         <p>Old picture of kamppi</p>
-
 
 
     </div>

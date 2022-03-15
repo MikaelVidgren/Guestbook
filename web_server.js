@@ -40,6 +40,7 @@ app.get("/newmessage", function (req, res) {
   res.sendFile(__dirname + "/newmessage.html");
 });
 var bodyParser = require("body-parser");
+const res = require("express/lib/response");
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post("/newmessage", function (req, res) {
@@ -60,6 +61,11 @@ app.post("/newmessage", function (req, res) {
       });
       res.send("Viestisi on tallennettu. Tarkastele viestiäsi osoitteessa: https://mikaelguestbook.herokuapp.com/guestbook tai palaa etusivulle: https://mikaelguestbook.herokuapp.com ");
     });
+
+    app.get("/ajaxmessage", function (req, res) {
+      res.sendFile(__dirname + "/ajaxmessage.html");
+    });
+  
 
 
 
