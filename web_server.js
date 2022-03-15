@@ -65,6 +65,7 @@ app.post("/newmessage", function (req, res) {
 
 //Route Error 404
 app.get("*", function (req, res) {
+  res.send("404 - Sivua ei ole");
     
   });
 
