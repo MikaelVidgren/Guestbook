@@ -6,3 +6,5 @@ Four routes: /,guestbook,newmessage and ajaxmessage.
 /guestbook loads and parses JSON-file to the page. Not sure how to format a JSON-file with bootstrap or pure.css, so the table is what it is.
 
 Should be 5/6 points working
+
+https://mikaelguestbook.herokuapp.com/
