@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fi">
+    
+<head>
+    <style>
+        .body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: black;
+            /*color: pink;*/
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .header h1 {
+            text-align: center;
+            background-color: peachpuff;
+        }
+
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            height: 25%;
+            width: 25%;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: rgb(200, 200, 200);
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 12px 14px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .section {
+            color: rgb(0, 0, 0);
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .section form {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border: 2px;
+            
+            border-style: solid;
+            border-color: grey;
+            background-color: ghostwhite;
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+    </style>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <!--HEADER-->
+    <div class="header">
+        <h1>Welcome to my Guestbook</h1>
+        <img src="VanhaKuvaHKI.jpg" alt="VanhaKuvaHelsingistä" class="center">
+    </div>
+
+    <div class="header">
+        <p></p>
+    </div>
+    <!--NAVIGOINTI-->
+    <div class="topnav" id="myTopnav">
+        <a href="/" class="active">Homepage ("/")</a>
+        <a href="guestbook">Guestbook</a>
+        <a href="newmessage">New message</a>
+        <a href="Placeholder">Ajaxmessage</a>
+
+    </div>
+
+    <!--SECTION-->
+    <!--SCRIPT FOR NOT ACCEPTING EMPTY FIELD IN FORM-->
+    <script>
+        function validateForm() {
+          var x = document.forms["form1"]["username"].value;
+          if (x == "" || x == null) {
+            alert("Name must be filled out");
+            return false;
+          }
+        }
+        </script>
+
+
+
+    <div class="section">
+        <h2>Here you can leave your name, country and a message</h2><br>
+
+        <form name="form1" method="post" action="newmessage" onsubmit="return validateForm()">
+            <!-- SELVITÄ <form </form>action="/action_page.php"> -->
+            <label for="fname">Name:</label><br>
+            <input type="text" name="username" value="" placeholder="'Matti Meikäläinen'"><br>
+            <label for="country">Country:</label><br>
+            <input type="text" name="country" value="" placeholder="'Mikä Mikä Maa'"><br>
+            
+            <p>Message:</p>
+            
+            
+            <textarea rows="4" cols="30" name="message" placeholder="'Add your message here'"></textarea>
+            <br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <br>
+        <img src="VanhaKuvaHKI_2.jpg" alt="VanhaKuvaHelsingistä_2" class="center">
+        <p>Old picture of kamppi</p>
+
+
+    </div>
+
+    <!--FOOTER-->
+    <div class="footer">
+        <p>End of the page</p>
+
+    </div>
+</body>
+
+</html>
