@@ -1,3 +1,5 @@
+const PORT = process.env.PORT || 3000;
+var http = require("http");
 var express = require("express");
 const { sendFile } = require("express/lib/response");
 var app = express();
@@ -69,6 +71,6 @@ app.get("*", function (req, res) {
 
 
 
-app.listen(8080, function () {
-  console.log("Kuuntelee 8080 (Taika-portti)");
+app.listen(3000, function () {
+  console.log("Kuuntelee 3000 (Taika-portti)");
 });
