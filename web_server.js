@@ -72,6 +72,6 @@ app.get("*", function (req, res) {
 
 
 
-app.listen(3000, function () {
+app.listen(PORT, function () {
   console.log("Kuuntelee 3000 (Taika-portti)");
 });
