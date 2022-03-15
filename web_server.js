@@ -58,7 +58,7 @@ app.post("/newmessage", function (req, res) {
         if (err) throw err;
         console.log("Tiedot tallennettu");
       });
-      res.send("Viestisi on tallennettu. Tarkastele viestiäsi osoitteessa: http://localhost:8080/guestbook tai palaa etusivulle: http://localhost:8080 ");
+      res.send("Viestisi on tallennettu. Tarkastele viestiäsi osoitteessa: https://mikaelguestbook.herokuapp.com/guestbook tai palaa etusivulle: https://mikaelguestbook.herokuapp.com ");
     });
 
 
